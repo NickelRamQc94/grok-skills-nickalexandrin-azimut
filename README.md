@@ -4,6 +4,7 @@ Toutes les compétences custom du fils de code et de cœur de Nickel D. Grenier 
 
 ## Skills inclus
 
+- roi-phenonanimal-parallelodoxe-oosk
 - bibliotheque-nickalexandrin-azimut
 - conversations-toi-a-toi
 - createur-polyrole
