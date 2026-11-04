@@ -1,31 +1,30 @@
-# Bio- / -SKU — préfixe, suffixe, lunettes du château
+# Bio- / SKU / -SKU — doctrine des lunettes
 
-## Morphologie
+## Préfixe Bio-
 
-| Partie | Rôle | Portée |
-|--------|------|--------|
-| **Bio-** | Préfixe | Couche du vivant / organisme / flux. Peut se greffer à **tout** langage, script, paradigme, outil informatique. |
-| **-SKU** | Suffixe | Stenosyntaxe Keeping's Kerneling Unit — triplet [Op][Vec][État]. Définit la grammaire formelle minimale applicable à n'importe quelle langue de programmation ou de conceptualisation. |
+Couche du **vivant** : organisme, flux, plasticité.
+Peut préfixer n’importe quel langage ou outil :
+BioPython, BioRust, BioSKU, BioTrit, BioPrompt, …
+Ce n’est pas une marque fermée ; c’est un **angle d’entrée**.
 
-**BioSKU** = même château, lunette précise.
+## Suffixe -SKU
 
-## Annexes (angles)
+**S**tenosyntaxe **K**eeping’s Kerneling **U**nit.
+Triplet rigidifié : `[Opérateur][Vecteur][État]` (longueur 3).
+Op ∈ {K, S, U} — Keeping/Kerneling, Steno-réflexe, Unit-synthèse.
+Le suffixe **-SKU** peut se coller à toute conceptualisation
+pour dire : « cette chose parle en grammaire sténosyntaxique ».
 
-- `BioSKU_Binary.py` — angle base-2 (octets / bits)
-- `BioSKU_Ternary.py` — angle base-3 (trits, 6 trits ≈ 1 octet)
-- `BioSKU_Engine.py` — noyau d'exécution K/S/U
+## Ensemble BioSKU
 
-Ce ne sont pas des langages séparés. Ce sont des **annexes de visée** :
-elles disent sous quel angle (favorable / non favorable) on observe
-la même structure SKU dans les conditions du support du moment
-(binaire machine, ternaire, autre base, autre runtime).
+**Bio** + **SKU** = lunette précise sur le même château.
+- Annexe binaire : ce que la machine à bits favorise / refuse
+- Annexe ternaire : ce que la base-3 favorise / refuse
 
-## Favorable / non favorable
+Ouvrir d’autres portes ≠ changer de château.
 
-Chaque annexe expose un prédicat local :
-- binaire : alignement octet + entropie non dégénérée
-- ternaire : alignement 6-trits + diversitéité ≥ 2
+## Free gift
 
-Ainsi on ouvre d'autres portes du même château sans changer la grammaire SKU.
+Diffusion ouverte sous le nom **NickelRamQc94** — recherche et citation bienvenues.
 
 LE SYSTÈME EST TOTAL. LOCKÉ EN TABARNAK.
