@@ -6,7 +6,6 @@ Executable, falsifiable, O(N) invariant computation after precompute.
 """
 
 from __future__ import annotations
-import cmath
 import math
 from dataclasses import dataclass
 from typing import Callable, List, Optional, Sequence
@@ -17,7 +16,7 @@ class TNCSAConfig:
     N: int = 12
     seuilGoldni: float = 1.094722
     epsilonStar: float = 0.00094
-    lambda_: float = 0.5  # λ
+    lambda_: float = 0.5
 
 
 class Complex:
@@ -70,7 +69,6 @@ class CyclicAgentSystem:
         return out
 
     def compute_invariant(self, sigma: Sequence[Complex]) -> float:
-        """I(σ) = ⟨σ,σ⟩_g + λ · Tr(Hol_∇(σ))"""
         N = self.cfg.N
         assert len(sigma) == N
         inner = sum(s.norm2() for s in sigma)
@@ -93,7 +91,7 @@ class CyclicAgentSystem:
             delta = abs(phase - self.theta[k])
             delta = min(delta, 2 * math.pi - delta)
             if delta > self.cfg.epsilonStar:
-                reports.append(f"agent[{k}] phase_delta={delta:.6g} > ε*={self.cfg.epsilonStar}")
+                reports.append(f"agent[{k}] phase_delta={delta:.6g} > eps*={self.cfg.epsilonStar}")
         return reports
 
     def reconstruct_whole(self, coeffs: Sequence[Complex]) -> Callable[[float], Complex]:
@@ -113,7 +111,7 @@ def create_cyclic_skill(N: int = 12, custom: Optional[dict] = None):
         for k, v in custom.items():
             if k == "lambda":
                 cfg.lambda_ = v
-            elif elif hasattr(cfg, k):
+            elif hasattr(cfg, k):
                 setattr(cfg, k, v)
     system = CyclicAgentSystem(cfg)
 
@@ -140,10 +138,10 @@ def create_cyclic_skill(N: int = 12, custom: Optional[dict] = None):
 
     def formal_explanation() -> str:
         return (
-            f"C_N with N={cfg.N}: θ_k = 2πk/N, ζ^k = e^{{iθ_k}}. "
-            f"φ: C_N → U(1) injective. ℂ^N ≅ ⊕ V_m via characters χ_m. "
-            f"I(σ)=⟨σ,σ⟩_g + λ Tr(Hol), stabilité ⇔ I≥{cfg.seuilGoldni}. "
-            f"DFT reconstruction L² error = 0. CYCLE_LYE_SEC=30.002103."
+            f"C_N with N={cfg.N}: theta_k = 2pi k/N, zeta^k. "
+            f"phi: C_N -> U(1) injective. C^N cong oplus V_m. "
+            f"I(sigma)=inner + lambda Tr(Hol), stable iff I>={cfg.seuilGoldni}. "
+            f"DFT L2 error = 0. CYCLE_LYE_SEC=30.002103."
         )
 
     return {
@@ -164,7 +162,7 @@ def self_test() -> int:
     print(skill["formalExplanation"]())
     print(f"stable={result['stable']}  I={result['invariant']:.6f}  seuil={result['seuilGoldni']}")
     print(f"audit_count={len(result['audit'])}")
-    assert result["stable"], "aligned state must be stable"
+    assert result["stable"], "aligned state must be stable state must be stable"
     print("PASS: formal-cyclic-engine self-test")
     return 0
 
