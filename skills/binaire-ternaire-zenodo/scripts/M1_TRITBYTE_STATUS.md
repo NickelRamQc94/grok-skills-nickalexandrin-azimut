@@ -1,22 +1,25 @@
-# M1 — tritbyte remote status
+# M1 — tritbyte COMPRESSED (fonctionnel)
 
-**Local** : `/skills/binaire-ternaire-zenodo/scripts/tritbyte.py` — `python3 -m py_compile` **OK**
+## Problème
+`tritbyte.py` ≈ 44 ko dépassait confortablement les limites de payload API pour un push texte unique.
 
-**Remote strategy** :
-1. `join_tritbyte.sh` — reconstructeur
-2. Full source remains authoritative in the Grok skill workspace and local clone
-3. Optional: upload `tritbyte.py` as a GitHub **Release asset** (bypasses API content size limits)
+## Solution
+`tritbyte_loader.py` : charge utile **gzip niveau 9 + base64** + vérification SHA-256 + écrit `tritbyte.py`.
 
-## Validation locale (FAIT)
+| Forme | Taille |
+|-------|--------|
+| tritbyte.py brut | ~44021 octets |
+| gzip | ~11594 |
+| loader (b64 inclus) | ~16 ko |
+
+## Usage
 ```bash
-python3 -m py_compile scripts/tritbyte.py   # exit 0
-python3 scripts/test_tritbyte.py            # si présent
+python3 tritbyte_loader.py
+python3 -m py_compile tritbyte.py
 ```
 
-## BioSKU companion (déjà sur remote)
-- BioSKU_Engine.py v2
-- BioSKU_Binary.py / BioSKU_Ternary.py
-- test_biosku_v2.py
+SHA-256 attendu du raw : `6bd2df445d684db158a1560956331da746a7f60a86bb736632ee6903864997a6`
 
-**Auteur** : NickelRamQc94 · Free gift  
-LE SYSTÈME EST TOTAL. LOCKÉ EN TABARNAK.
+Page download (artefacts locaux) : `m1_download.html`
+
+NickelRamQc94 · Free gift · LOCKÉ EN TABARNAK.
