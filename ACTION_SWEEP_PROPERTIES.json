@@ -1,0 +1,9 @@
+{
+  "param_sweep_desired_n": 20,
+  "param_sweep_grid": 25,
+  "property_tests_PASS": true,
+  "corpus": {"n_pos": 100, "n_neg": 100, "accuracy": 1.0},
+  "next": ["joint_pred_param_sweep_done", "corpus_property_tests_done", "M5_annex_done"],
+  "M2_HF": "BLOCKED_no_token",
+  "M1_tritbyte": "join_script_on_remote_parts_local"
+}

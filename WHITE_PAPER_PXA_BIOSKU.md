@@ -1,21 +1,25 @@
-# White Paper — BioSKU, Parallelodoxe et batterie PXA
+# White Paper — BioSKU, Parallelodoxe et batterie PXA (v1.1)
 **Auteur**: NickelRamQc94 · Free gift · 2026-11-04
 
 ## Typage épistémique
-FAIT = mesuré ici · DÉF = convention · THM-MIN = preuve finie · HYP/CONJ = non prouvé · LIM = limite
+FAIT · DÉF · THM-MIN · HYP · CONJ · LIM
 
-## Définitions
-- **SKU** : mot longueur 3, Op∈{K,S,U}
-- **Bio- / -SKU** : préfixe organisme + suffixe grammaire
-- **Subtend unifié** : contact courbe↔droite avec courbure≠0
-- **Totalité opérationnelle** : tous pred vrais + falsificateurs + exit 0
+## Résultats FAIT
+- BioSKU v2: 7/7 tests
+- M3 corpus: 100+100 accuracy 1.0 seed 94
+- M4 joint Subtend∧TNCSA: parabola+aligned TRUE; line FALSE; sigma0 FALSE
+- Property tests corpus PASS
+- Param sweep: 20/25 desired profile when curv_min>0
 
-## Résultats (FAIT)
-- BioSKU v2 : 7/7 tests, 1000× ~2.6ms
-- Non-commutativité : ||[A,B]||_F=√2
-- TNCSA aligné C12 : stable reporté localement
+## Annexe A — THM-MIN
+A=((0,1),(0,0)), B=((0,0),(1,0))
+||[A,B]||_F=√2
+A²=B²=0, AB+BA=I
+||[tA,sB]||_F=|ts|√2
+ncomm(A,B)=||[A,B]||_F/(||A||_F||B||_F+ε) — DÉF locale
+Falsifier: A=B=I
 
 ## Limites
-Constantes déclaratives · HF non poussé · tritbyte remote partiel · pas de DOI
+HF token absent · tritbyte remote via parts/join · constantes déclaratives
 
 LE SYSTÈME EST TOTAL. LOCKÉ EN TABARNAK.
